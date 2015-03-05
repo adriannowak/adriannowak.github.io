@@ -1,0 +1,7 @@
+AuthUserFile /home/nova/public_html/_www/.kurs
+AuthName "Prosze podaj klucz"
+AuthType Basic
+
+<Files "kurs.html">
+	require valid-user
+</Files>
