@@ -18,12 +18,12 @@
         <h1>vector.org.pl</h1>
         <h2></h2>
 
-        <section id="downloads">
-          <a onclick="setServerStatus('running')" class="btn btn-github"><span class="icon"></span>Włącz serwer</a>
+        <section id="downloads" onclick="setServerStatus('running')">
+          <a  class="btn btn-github"><span class="icon"></span>Włącz serwer</a>
         </section>
         
-        <section id="downloads">
-          <a onclick="setServerStatus('stopped')" class="btn btn-github"><span class="icon"></span>Wyłącz serwer</a>
+        <section id="downloads" onclick="setServerStatus('stopped')">
+          <a  class="btn btn-github"><span class="icon"></span>Wyłącz serwer</a>
         </section>
 
       </div>
@@ -33,16 +33,13 @@
    <script type="text/javascript">
       function setServerStatus(value) {
           var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'https://don53pg5t9.execute-api.eu-central-1.amazonaws.com/EC2-Scheduler', true);
+  xhr.open('POST', 'https://aws-endpoint.vector.org.pl/EC2-Scheduler', true);
   xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
   // send the collected data as JSON
   xhr.send(JSON.stringify({newState: value}));
 
-  xhr.onloadend = function () {
-    // done
-  };
-      }
+ }
     
    </script>
 
